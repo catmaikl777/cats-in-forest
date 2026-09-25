@@ -1,0 +1,18 @@
+{
+  "name": "shadow-duel",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Shadow Duel — онлайн PvP-файтинг (клоn боевой системы Shadow Fight 2). Только 1v1: матчмейкинг + бой двух игроков.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev:server": "npm run dev --prefix packages/server",
+    "dev:client": "npm run dev --prefix packages/client",
+    "typecheck": "npm run typecheck --prefix packages/shared && npm run typecheck --prefix packages/server && npm run typecheck --prefix packages/client",
+    "test": "npm run test --prefix packages/server",
+    "build": "npm run build --prefix packages/client",
+    "install:all": "npm ci --prefix packages/shared && npm ci --prefix packages/server && npm ci --prefix packages/client",
+    "start": "npm start --prefix packages/server"
+  }
+}
