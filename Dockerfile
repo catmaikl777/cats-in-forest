@@ -5,9 +5,9 @@
 FROM node:22-alpine AS dependencies
 
 WORKDIR /app
-COPY packages/shared/package.json packages/shared/package.json
+COPY packages/shared/package*.json packages/shared/
 RUN npm ci --prefix packages/shared
-COPY packages/server/package.json packages/server/package.json
+COPY packages/server/package*.json packages/server/
 RUN npm ci --prefix packages/server
 
 FROM node:22-alpine AS runner
