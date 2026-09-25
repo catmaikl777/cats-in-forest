@@ -19,6 +19,9 @@ EXPOSE 2567
 
 WORKDIR /app
 
+# tsconfig сервера extends "../../tsconfig.base.json" — нужен для tsx paths
+COPY tsconfig.base.json ./tsconfig.base.json
+
 COPY --from=dependencies /app/packages/shared /app/packages/shared
 COPY --from=dependencies /app/packages/server /app/packages/server
 COPY packages/shared/src packages/shared/src
